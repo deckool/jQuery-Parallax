@@ -23,7 +23,7 @@ http://www.gnu.org/licenses/gpl.html
 		var $this = $(this);
 		var getHeight;
 		var firstTop;
-		var paddingTop = 0;
+		var paddingTop = 1;
 		
 		//get the starting position of each element to have parallax applied to it		
 		$this.each(function(){
@@ -54,7 +54,7 @@ http://www.gnu.org/licenses/gpl.html
 				var top = $element.offset().top;
 				var height = getHeight($element);
 
-				// Check if totally above or totally below viewport
+				// Check if totally above or totally below viewport . liquify backgrounds
 				if (top + height < pos || top > pos + windowHeight) {
 					return;
 				}
@@ -63,7 +63,7 @@ http://www.gnu.org/licenses/gpl.html
 			});
 		}		
 
-		$window.bind('scroll', update).resize(update);
+		$window.bind('scroll', update).resize(update);	
 		update();
 	};
 })(jQuery);
